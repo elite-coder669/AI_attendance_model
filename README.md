@@ -25,7 +25,6 @@ flowchart TD
     E -->|Yes| F[Capture photo]
     F --> G[Save with landmarks]
     G --> H[User stored]
-    
     B -->|2 - Login| I[Open webcam]
     I --> J[Stream frames]
     J --> K[Detect faces]
@@ -33,8 +32,6 @@ flowchart TD
     L --> M{Match in DB?}
     M -->|Yes| N[Log attendance]
     M -->|No| O[Tag as Unknown]
-    N --> P[Done]
-    O --> J
 ```
 
 **Registration** — A new user enters their name. The webcam opens and automatically captures their photo when a face is detected. The image is saved to disk with facial landmarks overlaid.
