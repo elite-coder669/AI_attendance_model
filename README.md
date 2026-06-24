@@ -1,5 +1,10 @@
 # AI Attendance Model
 
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![OpenCV](https://img.shields.io/badge/OpenCV-4.x-green)
+![License](https://img.shields.io/badge/license-View--Only-lightgrey)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+
 A face recognition-based attendance system that uses computer vision to register and authenticate users via webcam.
 
 ## Stack
