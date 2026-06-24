@@ -15,6 +15,28 @@ A face recognition-based attendance system that uses computer vision to register
 
 The system has two modes:
 
+```mermaid
+flowchart TD
+    A[Launch App] --> B{Choose option}
+    B -->|1 - Register| C[Enter name]
+    C --> D[Open webcam]
+    D --> E{Face detected?}
+    E -->|No| D
+    E -->|Yes| F[Capture photo]
+    F --> G[Save with landmarks]
+    G --> H[User stored]
+    
+    B -->|2 - Login| I[Open webcam]
+    I --> J[Stream frames]
+    J --> K[Detect faces]
+    K --> L[Encode face]
+    L --> M{Match in DB?}
+    M -->|Yes| N[Log attendance]
+    M -->|No| O[Tag as Unknown]
+    N --> P[Done]
+    O --> J
+```
+
 **Registration** — A new user enters their name. The webcam opens and automatically captures their photo when a face is detected. The image is saved to disk with facial landmarks overlaid.
 
 **Login / Attendance** — The webcam streams live video. Each frame is scanned for faces. Detected faces are encoded and compared against the registered user database. A match triggers an attendance record; unknown faces are tagged accordingly.
